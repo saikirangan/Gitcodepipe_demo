@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExecutionContext xmlns="http://www.xact.dk/xatester/v/1" environment="10.10.1.172:16196" logLevel="INFO" remote="false" useSimulations="true" uploadResult="false" timeout="600" readTimeout="30" debuggerType="NONE" jobInfoInterval="3" useRepository="false">
+  <ExtensionData>
+    <Parameter key="unittest.loadlibraries">
+      <Value>ISPW.TEST.DEV1.LOAD</Value>
+      <Value>ISPW.TEST.STG1.LOAD</Value>
+      <Value>ISPW.TEST.QA.LOAD</Value>
+      <Value>ISPW.TEST.PRD.LOAD</Value>
+      <Value>CEE.SCEERUN</Value>
+      <Value>SYS1.CPWR.MLCX170.SLCXLOAD</Value>
+      <Value>SYS1.CPWR.MPAA170.SPAALOAD</Value>
+    </Parameter>
+  </ExtensionData>
+  <XaUnit xmlns:data="http://www.xact.dk/xatester/data/v/1" componentNameUnderTest="ADDPGM" caseInsensitiveCompare="false" path="ADDPGM_Scenario.context">
+    <Test>
+      <Unittest testscenariopath="ADDPGM_Scenario.testscenario" moduleName="ADDPGM" />
+    </Test>
+  </XaUnit>
+</ExecutionContext>
