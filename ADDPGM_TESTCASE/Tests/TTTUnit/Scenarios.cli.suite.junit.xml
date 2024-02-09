@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?totaltestVersion 20.15.2.v20230719-1444_122?>
+<!--BMC AMI DevX Total Test 20.15.2.v20230719-1444_122 Feb 9, 2024 1:43:17 AM-->
+<testsuites>
+  <testsuite name="ADDPGM_Scenario.context" errors="1" tests="0" failures="0">
+    <testcase classname="ADDPGM_Scenario.context" name="ADDPGM_Scenario.context">
+      <error message="An error occurred and the execution has been stopped.&#xD;&#xA; //JOBNAME JOB ('ACCOUNTING INFO'),'NAME',NOTIFY=&amp;SYSUID,CLASS=A,&#xD;&#xA;//        MSGCLASS=R,REGION=0M&#xD;&#xA;//*** SPECIFY JOBCARD IN TOTALTEST PREFERENCES TO SUBSTITUTE&#xD;&#xA;//***&#xD;&#xA;//*** THE JOB CARD MUST INCLUDE A NOTIFY STATEMENT SUCH &#xD;&#xA;//*** AS NOTIFY=&amp;SYSUID and also a REGION=0M parameter&#xD;&#xA;//*&#xD;&#xA;//********************************************************************&#xD;&#xA;//* Execute Target Runner&#xD;&#xA;//********************************************************************&#xD;&#xA;//RUNNER EXEC PGM=TTTRUNNR&#xD;&#xA;//*&#xD;&#xA;//* You need to modify the following DD statements.&#xD;&#xA;//*&#xD;&#xA;//* The first DD statement should be changed to the ECC SLCXLOAD &#xD;&#xA;//* dataset that contains the Topaz for Total Test TTTRUNNR program.&#xD;&#xA;//*&#xD;&#xA;//* The second DD statement should be changed to the loadlib&#xD;&#xA;//* containing the programs to run during the test.&#xD;&#xA;//*&#xD;&#xA;//* The third DD statement is only required if running the JCL &#xD;&#xA;//* from Topaz for Total Test CLI with Code Coverage support.&#xD;&#xA;//* If testing an LE application it should be changed to the&#xD;&#xA;//* loadlib containing the COBOL runtime(CEE.SCEERUN), otherwise &#xD;&#xA;//* it can be removed.&#xD;&#xA;//*&#xD;&#xA;//STEPLIB DD DISP=SHR,DSN=SYS1.CPWR.MLCX170.SLCXLOAD&#xD;&#xA;//*  where MLCXnnn is MLCX170 OR HIGHER&#xD;&#xA;//        DD DISP=SHR,DSN=ISPW.TEST.DEV1.LOAD&#xD;&#xA;//*       DD DISP=SHR,DSN=&lt;COBOL RUNTIME LOADLIB&gt;&#xD;&#xA;//*&#xD;&#xA;//* The following lines will initialize storage to zeroes to avoid &#xD;&#xA;//* uninitialized storage assertion miscompares.&#xD;&#xA;//CEEOPTS  DD  *&#xD;&#xA;STORAGE(00,00,00)&#xD;&#xA;/*&#xD;&#xA;//TRPARM DD *&#xD;&#xA;*&#xD;&#xA;*        Optionally set your custom exit program here:&#xD;&#xA;* &#xD;&#xA;EXIT(NONE)&#xD;&#xA;*&#xD;&#xA;REPEAT(0),STUBS(ON),&#xD;&#xA;DEBUG(OFF)&#xD;&#xA;/* &#xD;&#xA;//BININP DD DSN=ADCDS.TOTALTST.ID995068.BININP,DISP=OLD&#xD;&#xA;//BINREF DD DSN=ADCDS.TOTALTST.ID995068.BINREF,DISP=OLD&#xD;&#xA;//BINRES DD DSN=ADCDS.TOTALTST.ID995068.BINRES,DISP=OLD&#xD;&#xA;//*&#xD;&#xA;//*      Optionally add your custom DD statements&#xD;&#xA;//*DD1 DD DSN=HLQ.CUSTOM.TEST.LOAD,DISP=SHR&#xD;&#xA;//SYSPRINT DD SYSOUT=*&#xD;&#xA;//*">An error occurred and the execution has been stopped.&#xD;
+ //JOBNAME JOB ('ACCOUNTING INFO'),'NAME',NOTIFY=&amp;SYSUID,CLASS=A,&#xD;
+//        MSGCLASS=R,REGION=0M&#xD;
+//*** SPECIFY JOBCARD IN TOTALTEST PREFERENCES TO SUBSTITUTE&#xD;
+//***&#xD;
+//*** THE JOB CARD MUST INCLUDE A NOTIFY STATEMENT SUCH &#xD;
+//*** AS NOTIFY=&amp;SYSUID and also a REGION=0M parameter&#xD;
+//*&#xD;
+//********************************************************************&#xD;
+//* Execute Target Runner&#xD;
+//********************************************************************&#xD;
+//RUNNER EXEC PGM=TTTRUNNR&#xD;
+//*&#xD;
+//* You need to modify the following DD statements.&#xD;
+//*&#xD;
+//* The first DD statement should be changed to the ECC SLCXLOAD &#xD;
+//* dataset that contains the Topaz for Total Test TTTRUNNR program.&#xD;
+//*&#xD;
+//* The second DD statement should be changed to the loadlib&#xD;
+//* containing the programs to run during the test.&#xD;
+//*&#xD;
+//* The third DD statement is only required if running the JCL &#xD;
+//* from Topaz for Total Test CLI with Code Coverage support.&#xD;
+//* If testing an LE application it should be changed to the&#xD;
+//* loadlib containing the COBOL runtime(CEE.SCEERUN), otherwise &#xD;
+//* it can be removed.&#xD;
+//*&#xD;
+//STEPLIB DD DISP=SHR,DSN=SYS1.CPWR.MLCX170.SLCXLOAD&#xD;
+//*  where MLCXnnn is MLCX170 OR HIGHER&#xD;
+//        DD DISP=SHR,DSN=ISPW.TEST.DEV1.LOAD&#xD;
+//*       DD DISP=SHR,DSN=&lt;COBOL RUNTIME LOADLIB&gt;&#xD;
+//*&#xD;
+//* The following lines will initialize storage to zeroes to avoid &#xD;
+//* uninitialized storage assertion miscompares.&#xD;
+//CEEOPTS  DD  *&#xD;
+STORAGE(00,00,00)&#xD;
+/*&#xD;
+//TRPARM DD *&#xD;
+*&#xD;
+*        Optionally set your custom exit program here:&#xD;
+* &#xD;
+EXIT(NONE)&#xD;
+*&#xD;
+REPEAT(0),STUBS(ON),&#xD;
+DEBUG(OFF)&#xD;
+/* &#xD;
+//BININP DD DSN=ADCDS.TOTALTST.ID995068.BININP,DISP=OLD&#xD;
+//BINREF DD DSN=ADCDS.TOTALTST.ID995068.BINREF,DISP=OLD&#xD;
+//BINRES DD DSN=ADCDS.TOTALTST.ID995068.BINRES,DISP=OLD&#xD;
+//*&#xD;
+//*      Optionally add your custom DD statements&#xD;
+//*DD1 DD DSN=HLQ.CUSTOM.TEST.LOAD,DISP=SHR&#xD;
+//SYSPRINT DD SYSOUT=*&#xD;
+//*</error>
+    </testcase>
+  </testsuite>
+</testsuites>
