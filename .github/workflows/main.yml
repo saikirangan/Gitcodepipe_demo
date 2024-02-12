@@ -73,7 +73,7 @@ jobs:
         run: ${{ vars.CLIPATH }}\TotalTestFTCLI.bat -data "${{ vars.WORKSPACE }}" -host "${{ vars.HCICONNECTION }}" -port "${{ vars.PORT }}" -u "${{ vars.USERID }}" -p "${{ secrets.HCI_PASSWORD }}" -f "${{ vars.TESTFOLDERPATH }}" --runner-jcl "${{ vars.JCLPATH }}"
       
       - name: Publish Test Results
-        uses: actions/composite@v4
+        uses:  EnricoMi/publish-unit-test-result-action/composite@v2
         with: 
           name: test-results
           path: C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output
