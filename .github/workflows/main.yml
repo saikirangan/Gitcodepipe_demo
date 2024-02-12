@@ -72,8 +72,8 @@ jobs:
         if:  ${{ steps.generate.outputs.generate_failed_count == 0 }}
         run: ${{ vars.CLIPATH }}\TotalTestFTCLI.bat -data "${{ vars.WORKSPACE }}" -host "${{ vars.HCICONNECTION }}" -port "${{ vars.PORT }}" -u "${{ vars.USERID }}" -p "${{ secrets.HCI_PASSWORD }}" -f "${{ vars.TESTFOLDERPATH }}" --runner-jcl "${{ vars.JCLPATH }}"
       
-      - name:  Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v4
+      - name: Publish Test Results
+        uses: actions/upload-artifact@v4
         with: 
           name: test-results
           path: C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output
