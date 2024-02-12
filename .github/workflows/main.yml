@@ -74,10 +74,11 @@ jobs:
           
       - name: Publish Test Results
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           files: |
             C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output/**/*.archive
-            C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output/**/*.xml
+            C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output/**/*.log
             C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output/**/*.html
           
       - name: deploy
