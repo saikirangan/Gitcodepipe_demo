@@ -73,10 +73,10 @@ jobs:
         run: ${{ vars.CLIPATH }}\TotalTestFTCLI.bat -data "${{ vars.WORKSPACE }}" -host "${{ vars.HCICONNECTION }}" -port "${{ vars.PORT }}" -u "${{ vars.USERID }}" -p "${{ secrets.HCI_PASSWORD }}" -f "${{ vars.TESTFOLDERPATH }}" --runner-jcl "${{ vars.JCLPATH }}"
           
       - name: Publish Test Results
-        uses: actions/upload-test-results@v4
-        with:
-          test-results-format: 'JUnit' # Adjust based on your testing framework
-          test-results-file: C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output.xml # Adjust to the actual path of your test results
+        uses: actions/upload-artifact@v4
+        with: 
+          name: test-results
+          path: C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output.xml
      
       - name: deploy
         if: ${{ steps.sync.outputs.automaticBuildJson != '{}' && steps.generate.outputs.generate_failed_count == 0}}
