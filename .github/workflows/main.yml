@@ -73,7 +73,7 @@ jobs:
         run: ${{ vars.CLIPATH }}\TotalTestFTCLI.bat -data "${{ vars.WORKSPACE }}" -host "${{ vars.HCICONNECTION }}" -port "${{ vars.PORT }}" -u "${{ vars.USERID }}" -p "${{ secrets.HCI_PASSWORD }}" -f "${{ vars.TESTFOLDERPATH }}" --runner-jcl "${{ vars.JCLPATH }}"
           
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        uses: EnricoMi/publish-unit-test-result-action/composite@v4
         if: always()
         with:
           files: |
