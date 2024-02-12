@@ -74,10 +74,12 @@ jobs:
           
       - name: Publish Test Results
         uses: actions/upload-artifact@v4
-        with: 
-          name: test-results
-          path: C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output.xml
-     
+        with:
+          files: |
+            C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output/**/*.archive
+            C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output/**/*.xml
+            C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output/**/*.html
+          
       - name: deploy
         if: ${{ steps.sync.outputs.automaticBuildJson != '{}' && steps.generate.outputs.generate_failed_count == 0}}
         uses: bmc-compuware/ispw-deploy@main
