@@ -73,10 +73,11 @@ jobs:
         run: ${{ vars.CLIPATH }}\TotalTestFTCLI.bat -data "${{ vars.WORKSPACE }}" -host "${{ vars.HCICONNECTION }}" -port "${{ vars.PORT }}" -u "${{ vars.USERID }}" -p "${{ secrets.HCI_PASSWORD }}" -f "${{ vars.TESTFOLDERPATH }}" --runner-jcl "${{ vars.JCLPATH }}"
       
       - name:  Publish Test Results
-        if: EnricoMi/publish-unit-test-result-action@v4
+        uses: EnricoMi/publish-unit-test-result-action@v4
         with: 
           name: test-results
           path: C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output
+     
       - name: deploy
         if: ${{ steps.sync.outputs.automaticBuildJson != '{}' && steps.generate.outputs.generate_failed_count == 0}}
         uses: bmc-compuware/ispw-deploy@main
