@@ -72,11 +72,28 @@ jobs:
         if:  ${{ steps.generate.outputs.generate_failed_count == 0 }}
         run: ${{ vars.CLIPATH }}\TotalTestFTCLI.bat -data "${{ vars.WORKSPACE }}" -host "${{ vars.HCICONNECTION }}" -port "${{ vars.PORT }}" -u "${{ vars.USERID }}" -p "${{ secrets.HCI_PASSWORD }}" -f "${{ vars.TESTFOLDERPATH }}" --runner-jcl "${{ vars.JCLPATH }}"
           
-      - name: Publish Test Results
-        uses: actions/upload-artifact@v4
-        with: 
-          name: test-results
-          path: C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output
+      - name: Publish Report
+        uses: turing85/publish-report@v1
+        if: ${{ always() }}
+        with:
+          comment-header: my-comment-header
+          comment-message-success: |
+            YAY! {0} passed!  
+            
+            {1} tests were successful, {2} tests failed, {3} test were skipped.
+            
+            The report can be found [here]({4}).
+
+          comment-message-failure: |
+            On no! {0} failed!  
+
+            {1} tests were successful, {2} tests failed, {3} test were skipped.
+
+            The report can be found [here]({4}).
+          report-fail-on-error: true # to fail when tests failed
+          report-name: Tests
+          report-path: 'C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output.xml'
+          report-reporter: java-junit
           
       - name: deploy
         if: ${{ steps.sync.outputs.automaticBuildJson != '{}' && steps.generate.outputs.generate_failed_count == 0}}
