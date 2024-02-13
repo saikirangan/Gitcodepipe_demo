@@ -76,7 +76,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-results
-          path: C:\Users\sandhata\Actions-runner\actions-runner1\_work\Gitcodepipe_demo\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output-results  
+          path: C:\Users\sandhata\Actions-runner\actions-runner1\_work\Gitcodepipe_demo\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output  
 
       - name: Download Test Results
         uses: actions/download-artifact@v2
