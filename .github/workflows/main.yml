@@ -92,7 +92,7 @@ jobs:
             The report can be found [here]({4}).
           report-fail-on-error: true # to fail when tests failed
           report-name: Tests
-          report-path: 'C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output.xml'
+          report-path: 'C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output'
           report-reporter: java-junit
           
       - name: deploy
