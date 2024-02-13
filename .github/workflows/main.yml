@@ -77,7 +77,7 @@ jobs:
         if: success() || failure()               
         with:
           name: Tests Results            
-          path: C:\Users\sandhata\git\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output
+          path: C:\Users\sandhata\Actions-runner\actions-runner1\_work\Gitcodepipe_demo\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output
           reporter: java-junit                 
             
       - name: deploy
