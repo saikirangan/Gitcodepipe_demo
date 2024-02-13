@@ -73,7 +73,7 @@ jobs:
         run: ${{ vars.CLIPATH }}\TotalTestFTCLI.bat -data "${{ vars.WORKSPACE }}" -host "${{ vars.HCICONNECTION }}" -port "${{ vars.PORT }}" -u "${{ vars.USERID }}" -p "${{ secrets.HCI_PASSWORD }}" -f "${{ vars.TESTFOLDERPATH }}" --runner-jcl "${{ vars.JCLPATH }}"
           
       - name: Publish test results
-        uses: turing85/publish-report@v4
+        uses: turing85/publish-report@v1
         if: ${{ always() }}
         with:
           comment-header: my-comment-header
