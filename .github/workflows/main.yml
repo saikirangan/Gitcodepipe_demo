@@ -77,8 +77,7 @@ jobs:
         if: success() || failure()               
         with:
           name: Tests Results            
-          path: C:\Users\sandhata\Actions-runner\actions-runner1\_work\Gitcodepipe_demo\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output
-          reporter: java-junit                 
+          path: C:\Users\sandhata\Actions-runner\actions-runner1\_work\Gitcodepipe_demo\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output             
             
       - name: deploy
         if: ${{ steps.sync.outputs.automaticBuildJson != '{}' && steps.generate.outputs.generate_failed_count == 0}}
