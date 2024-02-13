@@ -5,9 +5,9 @@
 //*** THE JOB CARD MUST INCLUDE A NOTIFY STATEMENT SUCH 
 //*** AS NOTIFY=&SYSUID and also a REGION=0M parameter
 //*
-//********************************************************************
+//*******************************************************************
 //* Execute Target Runner
-//********************************************************************
+//*******************************************************************
 //RUNNER EXEC PGM=TTTRUNNR
 //*
 //* You need to modify the following DD statements.
