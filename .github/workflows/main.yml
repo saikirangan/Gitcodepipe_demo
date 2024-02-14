@@ -77,6 +77,8 @@ jobs:
         if: success() || failure()                                                
         with:
           report_paths: ${{ vars.TESTOUTPUT }}/*.XML
+          token: ${{ secrets.GIT_TOKEN }} 
+          check_name: JUnit Test Report
           include_passed: true
           detailed_summary: true
 
