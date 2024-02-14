@@ -77,6 +77,7 @@ jobs:
         if: success() || failure()                                                
         with:
           report_paths: ${{ vars.TESTOUTPUT }}/*.XML
+          job_summary: true
           require_tests: true
           include_passed: true
           detailed_summary: true
