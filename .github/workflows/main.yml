@@ -78,7 +78,7 @@ jobs:
         with:
           report_paths: ${{ vars.TESTOUTPUT }}/*.XML
           detailed_summary: true
-          job_summary: true
+        # job_summary: true
           require_tests: true
           include_passed: true     
 
