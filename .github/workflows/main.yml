@@ -76,7 +76,7 @@ jobs:
         uses: mikepenz/action-junit-report@v4
         if: success() || failure()                                                
         with:
-          report_paths: ${{ vars.DEMO_TESTOUTPUT }}/*.XML
+          report_paths: ${{ vars.TESTOUTPUT }}/*.XML
           detailed_summary: true
           job_summary: true
           require_tests: true
