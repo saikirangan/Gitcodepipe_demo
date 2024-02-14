@@ -76,11 +76,11 @@ jobs:
         uses: mikepenz/action-junit-report@v4
         if: success() || failure()                                                
         with:
-          report_paths: ${{ vars.TESTOUTPUT }}/*.XML
+          report_paths: ${{ vars.DEMO_TESTOUTPUT }}/*.XML
+          detailed_summary: true
           job_summary: true
           require_tests: true
-          include_passed: true
-          detailed_summary: true
+          include_passed: true     
 
       - name: deploy
         if: ${{ steps.sync.outputs.automaticBuildJson != '{}' && steps.generate.outputs.generate_failed_count == 0}}
