@@ -72,21 +72,13 @@ jobs:
         if:  ${{ steps.generate.outputs.generate_failed_count == 0 }}
         run: ${{ vars.CLIPATH }}\TotalTestFTCLI.bat -data "${{ vars.WORKSPACE }}" -host "${{ vars.HCICONNECTION }}" -port "${{ vars.PORT }}" -u "${{ vars.USERID }}" -p "${{ secrets.HCI_PASSWORD }}" -f "${{ vars.TESTFOLDERPATH }}" --runner-jcl "${{ vars.JCLPATH }}"
      
-      - name: Archive Test Results
-        uses: actions/upload-artifact@v4
-        with: 
-          name: test-results
-          path: C:\Users\sandhata\Actions-runner\actions-runner1\_work\Gitcodepipe_demo\Gitcodepipe_demo\ADDPGM_TESTCASE\Tests\Output  
-     
-      - name: Download Test Results
-        uses: actions/download-artifact@v4
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v4
+        if: success() || failure()                                                
         with:
-          name: test-results
-      
-      - name: Publish Test Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results 
+          report_paths: ${{ vars.TESTOUTPUT }}/*.XML
+          include_passed: true
+          detailed_summary: true
 
       - name: deploy
         if: ${{ steps.sync.outputs.automaticBuildJson != '{}' && steps.generate.outputs.generate_failed_count == 0}}
